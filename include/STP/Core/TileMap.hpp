@@ -58,6 +58,22 @@ class STP_API TileMap : public sf::Drawable, public tmx::Properties {
     ////////////////////////////////////////////////////////////
     explicit TileMap(const std::string& tmx_file);
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Move constructor, moves data of other to to this instance
+    ///
+    /// \param rvalue reference to other object 
+    ///
+    ////////////////////////////////////////////////////////////
+    TileMap(TileMap&& other);
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Move assignment operator, moves data of other to to this instance
+    ///
+    /// \param rvalue reference to other object 
+    ///
+    ////////////////////////////////////////////////////////////
+    TileMap& operator=(TileMap&& other);
+
  private:
     TileMap(const TileMap& other) = delete;
     TileMap& operator =(const TileMap&) = delete;
