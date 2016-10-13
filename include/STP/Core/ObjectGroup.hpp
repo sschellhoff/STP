@@ -108,7 +108,7 @@ class STP_API ObjectGroup : public MapObject {
     ////////////////////////////////////////////////////////////
     /// \brief Get the objects in the object group
     ///
-    /// \return The objects of the layer in a std::vecor.
+    /// \return The objects of the layer in a std::vector.
     ///
     ////////////////////////////////////////////////////////////
     const std::vector<tmx::ObjectGroup::Object>& GetObjects() const;
@@ -156,6 +156,78 @@ class STP_API ObjectGroup::Object : public sf::Drawable, public tmx::Properties 
     ///
     ////////////////////////////////////////////////////////////
     void SetColor(const sf::Color& color);
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the name of the object
+    ///
+    /// \return The name of the object as std::string.
+    ///
+    ////////////////////////////////////////////////////////////
+    const std::string& GetName() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the type of the object
+    ///
+    /// \return The type of the object as std::string.
+    ///
+    ////////////////////////////////////////////////////////////
+    const std::string& GetType() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the x coordinate of the object
+    ///
+    /// \return The x coordinate of the object.
+    ///
+    ////////////////////////////////////////////////////////////
+    unsigned int GetX() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the y coordinate of the object
+    ///
+    /// \return The y coordinate of the object.
+    ///
+    ////////////////////////////////////////////////////////////
+    unsigned int GetY() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the width of the object
+    ///
+    /// \return The width of the object.
+    ///
+    ////////////////////////////////////////////////////////////
+    unsigned int GetWidth() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the height of the object
+    ///
+    /// \return The height of the object.
+    ///
+    ////////////////////////////////////////////////////////////
+    unsigned int GetHeight() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the rotation of the object
+    ///
+    /// \return The rotation of the object.
+    ///
+    ////////////////////////////////////////////////////////////
+    float GetRotation() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the pointer to the tile of the object
+    ///
+    /// \return The pointer to the tile of the object.
+    ///
+    ////////////////////////////////////////////////////////////
+    tmx::TileSet::Tile const * const GetTile() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the vertices of the object
+    ///
+    /// \return The vertices of the object.
+    ///
+    ////////////////////////////////////////////////////////////
+    const std::vector<sf::Vertex>& GetVertices() const;
 
  private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;

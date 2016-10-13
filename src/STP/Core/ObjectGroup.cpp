@@ -156,6 +156,42 @@ void ObjectGroup::Object::SetColor(const sf::Color& color) {
     }
 }
 
+const std::string& ObjectGroup::Object::GetName() const {
+    return name_;
+}
+
+const std::string& ObjectGroup::Object::GetType() const {
+    return type_;
+}
+
+unsigned int ObjectGroup::Object::GetX() const {
+    return x_;
+}
+
+unsigned int ObjectGroup::Object::GetY() const {
+    return y_;
+}
+
+unsigned int ObjectGroup::Object::GetWidth() const {
+    return width_;
+}
+
+unsigned int ObjectGroup::Object::GetHeight() const {
+    return height_;
+}
+
+float ObjectGroup::Object::GetRotation() const {
+    return rotation_;
+}
+
+tmx::TileSet::Tile const * const ObjectGroup::Object::GetTile() const {
+    return tile_;
+}
+
+const std::vector<sf::Vertex>& ObjectGroup::Object::GetVertices() const {
+    return vertices_;
+}
+
 void ObjectGroup::Object::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     if (visible) {
         if (tile_) {
