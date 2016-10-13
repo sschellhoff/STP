@@ -69,6 +69,10 @@ void ObjectGroup::SetColor(const sf::Color& color) {
     }
 }
 
+const std::vector<tmx::ObjectGroup::Object>& ObjectGroup::GetObjects() const {
+    return objects_;
+}
+
 void ObjectGroup::draw(sf::RenderTarget& target, sf::RenderStates /* states */) const {
     if (visible) {
         for (unsigned int i = 0; i < objects_.size(); ++i)

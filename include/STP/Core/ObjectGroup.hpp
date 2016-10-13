@@ -105,6 +105,14 @@ class STP_API ObjectGroup : public MapObject {
     ////////////////////////////////////////////////////////////
     void SetOpacity(float opacity);
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Get the objects in the object group
+    ///
+    /// \return The objects of the layer in a std::vecor.
+    ///
+    ////////////////////////////////////////////////////////////
+    const std::vector<tmx::ObjectGroup::Object>& GetObjects() const;
+
  private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
