@@ -64,7 +64,7 @@ class STP_API TileMap : public sf::Drawable, public tmx::Properties {
     /// \param rvalue reference to other object 
     ///
     ////////////////////////////////////////////////////////////
-    TileMap(TileMap&& other);
+    TileMap(TileMap&& other) = default;
 
     ////////////////////////////////////////////////////////////
     /// \brief Move assignment operator, moves data of other to to this instance
@@ -72,7 +72,7 @@ class STP_API TileMap : public sf::Drawable, public tmx::Properties {
     /// \param rvalue reference to other object 
     ///
     ////////////////////////////////////////////////////////////
-    TileMap& operator=(TileMap&& other);
+    TileMap& operator=(TileMap&& other) = default;
 
  private:
     TileMap(const TileMap& other) = delete;

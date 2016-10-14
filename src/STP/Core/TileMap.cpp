@@ -79,28 +79,6 @@ TileMap::TileMap(const std::string& file_to_parse) {
     ShowObjects(false);
 }
 
-TileMap::TileMap(TileMap&& other) : working_dir_(std::move(other.working_dir_)), version_(other.version_), orientation_(std::move(other.orientation_)), width_(other.width_), height_(other.height_), tilewidth_(other.tilewidth_), tileheight_(other.tileheight_), layers_(std::move(other.layers_)), object_groups_(std::move(other.object_groups_)), image_layers_(std::move(other.image_layers_)), map_objects_(std::move(other.map_objects_)), tilesets_hash_(std::move(other.tilesets_hash_)), tilesets_(std::move(other.tilesets_)) {
-}
-
-TileMap& TileMap::operator=(TileMap&& other) {
-  if(this != &other) {
-    working_dir_ = std::move(other.working_dir_);
-    version_ = other.version_;
-    orientation_ = std::move(other.orientation_);
-    width_ = other.width_;
-    height_ = other.height_;
-    tilewidth_ = other.tilewidth_;
-    tileheight_ = other.tileheight_;
-    layers_ = std::move(other.layers_);
-    object_groups_ = std::move(other.object_groups_);
-    image_layers_ = std::move(other.image_layers_);
-    map_objects_ = std::move(other.map_objects_);
-    tilesets_hash_ = std::move(other.tilesets_hash_);
-    tilesets_ = std::move(other.tilesets_);
-  }
-  return *this;
-}
-
 void TileMap::AddLayer(tmx::Layer* newlayer) {
     map_objects_.push_back(std::unique_ptr<tmx::MapObject>(newlayer));
     layers_[newlayer->GetName()] = newlayer;
